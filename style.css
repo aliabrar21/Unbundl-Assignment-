@@ -1,0 +1,1368 @@
+/* Basic Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Replace with actual font from Figma (e.g., 'Roboto', sans-serif) */
+    line-height: 1.6;
+    color: #333; /* Dark grey for most text */
+}
+
+.container {
+    max-width: 1200px; /* Adjust as per Figma layout width */
+    margin: 0 auto;
+    padding: 0 20px; /* Horizontal padding for content */
+}
+
+/* --- Header/Navigation Bar --- */
+.main-header {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    position: sticky; /* Make header sticky if desired */
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.main-header .logo img {
+    height: 50px; /* Adjust logo height based on Figma */
+    vertical-align: middle; /* Align logo with text if any */
+}
+
+.main-nav {
+    flex-grow: 1; /* Allow navigation to take available space */
+    text-align: center; /* Center nav items visually */
+}
+
+.main-nav .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center menu items */
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .nav-list li {
+    margin: 0 15px; /* Spacing between nav items */
+}
+
+.main-nav .nav-list a {
+    text-decoration: none;
+    color: #333; /* Default nav link color */
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s ease;
+    padding: 5px 0; /* Vertical padding for click area */
+    display: block;
+}
+
+.main-nav .nav-list a:hover {
+    color: #007bff; /* Example hover color, pick from Figma */
+}
+
+.hamburger-menu {
+    display: none; /* Hidden by default on desktop */
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.header-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between button and phone number */
+}
+
+.header-contact .book-appointment-btn {
+    background-color: #ff6f00; /* Example button color (orange) from screenshots */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.header-contact .book-appointment-btn:hover {
+    background-color: #e65100; /* Darker orange on hover */
+}
+
+.header-contact span {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: #e0f2f7; /* Light blue background for the entire section */
+    padding: 80px 0; /* Adjust padding around the content */
+    position: relative; /* For general layout purposes, if needed */
+    overflow: hidden; /* To prevent overflow issues */
+    /* No background image directly on hero-section anymore */
+}
+
+.hero-section .container {
+    max-width: 1200px; /* Standard max-width for your content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Default horizontal padding */
+
+    display: flex; /* Use flexbox to arrange the left block and form card */
+    align-items: flex-start; /* Align items to the top of the container */
+    justify-content: space-between; /* Pushes the left block to the left, form card to the right */
+    gap: 20px; /* Adjust gap between the left block and the form card */
+}
+
+.hero-left-block {
+    flex-grow: 1; /* Allows this block to take available space */
+    min-width: 600px; /* Minimum width to contain content and image well. Adjust as needed. */
+    max-width: 800px; /* Max width to control its size relative to the container */
+    position: relative; /* For positioning the content within it */
+
+    /* Dentist image as background for this block */
+    background-image: url('dental_logo.jpg'); /* REPLACE with your dentist image path */
+    background-size: cover; /* Ensures the image covers this block */
+    background-position: center; /* Position the dentist on the right side of this block */
+    background-repeat: no-repeat;
+
+    /* Add an overlay to ensure text readability over the image. */
+    background-color: rgba(255, 255, 255, 0.7); /* White with transparency for overlay */
+    background-blend-mode: overlay; /* Blends the color with the image */
+
+    display: flex; /* Use flex to align content within this block */
+    align-items: center; /* Vertically center hero-content within this block */
+    justify-content: flex-start; /* Align content to the left */
+    padding: 50px; /* Padding inside this block to contain content */
+    border-radius: 10px; /* Match form card's rounded corners */
+    min-height: 450px; /* Ensure sufficient height for the image to show */
+}
+
+.hero-content {
+    flex-shrink: 0; /* Prevents this content block from shrinking */
+    max-width: 50%; /* Content takes half of the left block's width */
+    text-align: left;
+    /* No vertical padding needed here now as it's on hero-left-block */
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    color: #00796b;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-content .book-appointment-btn {
+    background-color: #ff6f00;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content .book-appointment-btn:hover {
+    background-color: #e65100;
+}
+
+.appointment-form-card {
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 380px; /* Fixed width from screenshots */
+    z-index: 20;
+    flex-shrink: 0; /* Prevents the form card from shrinking */
+    /* No absolute positioning needed here now, it's a direct flex item */
+}
+
+.appointment-form-card h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.appointment-form-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.appointment-form-card form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.appointment-form-card .book-free-consultation-btn {
+    width: 100%;
+    background-color: #28a745;
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-form-card .book-free-consultation-btn:hover {
+    background-color: #218838;
+}
+
+/* --- Responsive adjustments for the Hero Section --- */
+
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 50px 0;
+    }
+    .hero-section .container {
+        flex-direction: column; /* Stack the left block and form vertically */
+        align-items: center; /* Center items when stacked */
+        gap: 30px;
+    }
+
+    .hero-left-block {
+        min-width: unset; /* Remove fixed min-width for mobile */
+        max-width: 90%; /* Adjust max-width for smaller screens */
+        padding: 40px 20px; /* Adjust padding for mobile */
+        background-position: center center; /* Center image on mobile */
+        min-height: 350px; /* Adjust height for mobile */
+    }
+
+    .hero-content {
+        max-width: 100%; /* Allow content to take full width within its block */
+        text-align: center; /* Center text on mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .appointment-form-card {
+        width: 90%; /* Take up most of the width */
+        margin: 0; /* Reset margins */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .hero-content .book-appointment-btn {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .appointment-form-card {
+        padding: 25px;
+    }
+    .appointment-form-card h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 30px 0;
+    }
+    .hero-left-block {
+        padding: 30px 15px;
+        min-height: 300px;
+    }
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+    .hero-content p {
+        font-size: 0.9em;
+    }
+    .hero-content .book-appointment-btn {
+        width: 100%;
+    }
+    .appointment-form-card {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+/* --- Milestones Section --- */
+.milestones-section {
+    background-color: #f9f9f9; /* Light background */
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid #eee; /* Separator from hero */
+}
+
+.milestones-section .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 30px; /* Space between milestone items */
+}
+
+.milestone-item {
+    flex: 1; /* Allow items to grow/shrink */
+    min-width: 180px; /* Minimum width for each item */
+    text-align: center;
+}
+
+.milestone-item span {
+    display: block;
+    font-size: 3em; /* Large number */
+    font-weight: bold;
+    color: #00796b; /* Consistent brand color */
+    margin-bottom: 5px;
+}
+
+.milestone-item p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Safety, Precision, and Innovation Section */
+.features-section {
+    padding: 60px 0;
+    background-color: #fff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.features-section .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.features-section .subheading {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    position: relative;
+    width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 1 1 300px;
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 25, 47, 0.95);
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+}
+
+.feature-card:nth-child(2) .card-content {
+    background: rgba(0, 67, 88, 0.95);
+}
+
+.feature-card:nth-child(3) .card-content {
+    background: rgba(120, 60, 20, 0.95);
+}
+
+.card-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.card-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.card-content .learn-more {
+    font-size: 14px;
+    color: orange;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.card-content .learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .features-section .container {
+        width: 90%;
+    }
+
+    .feature-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-section h2 {
+        font-size: 24px;
+    }
+
+    .features-section .subheading {
+        font-size: 14px;
+    }
+
+    .feature-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .feature-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-section {
+        padding: 40px 0;
+    }
+
+    .card-content h3 {
+        font-size: 16px;
+    }
+
+    .card-content p {
+        font-size: 13px;
+    }
+
+    .card-content .learn-more {
+        font-size: 13px;
+    }
+}
+
+
+/* --- Google Reviews Section --- */
+.google-reviews-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.google-reviews-section h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.google-reviews{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.overall-rating {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overall-rating img {
+    height: 40px; /* Google logo size */
+    margin-bottom: 10px;
+}
+
+.overall-rating span {
+    font-size: 3.5em; /* Large rating number */
+    font-weight: bold;
+    color: #fbc02d; /* Google yellow star color */
+    line-height: 1; /* Tighten line height */
+}
+
+.overall-rating p {
+    font-size: 1.1em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.review-cards-carousel {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to cards when scrolling */
+    gap: 25px; /* Space between review cards */
+    padding-bottom: 20px; /* Space for scrollbar */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox scrollbar */
+    scrollbar-color: #bbb transparent; /* Firefox scrollbar color */
+}
+
+/* For Webkit browsers (Chrome, Safari) scrollbar styling */
+.review-cards-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.review-cards-carousel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.review-cards-carousel::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+    border: 2px solid transparent;
+}
+
+.review-card {
+    flex: 0 0 350px; /* Fixed width for carousel items, adjust as needed from Figma */
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    text-align: center;
+    align-items: center;
+    scroll-snap-align: start; /* Snap to the start of each card */
+    min-height: 150px; /* Ensure consistent height */
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Push content to top/bottom */
+}
+
+.review-card img {
+    width: 70px; /* Avatar size */
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid #ddd; /* Small border around avatar */
+}
+
+.review-card h4 {
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    color: #333;
+}
+
+.review-card .stars {
+    color: #fbc02d; /* Google yellow star color */
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    letter-spacing: 2px; /* Space between stars */
+}
+
+.review-card p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+    overflow: hidden; /* Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Add ellipsis if hidden */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limit to 4 lines */
+    -webkit-box-orient: vertical;
+}
+
+
+/* General Body and Container Styles (from previous combined code, ensuring consistency) */
+body {
+    font-family: Arial, sans-serif; /* Or your preferred font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Find Us Across India Section */
+.find-us-across-india {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f9f9f9; /* Light background for the section */
+}
+
+.find-us-across-india h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.find-us-across-india p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.city-grid {
+    display: flex; /* Use flexbox for the main grid containing city-cards and clinic-images */
+    gap: 20px; /* Space between the city cards group and clinic images group */
+    margin-bottom: 40px; /* Space before any subsequent sections */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center items if they don't fill the row */
+    align-items: flex-start; /* Align to the top */
+}
+
+.city-cards {
+    display: flex; /* Arranges city-card rows side by side */
+    flex-direction: column; /* Stacks city-card rows vertically */
+    gap: 20px; /* Space between each row of two city boxes */
+    flex: 2; /* Allows this section to take up more space, adjust as needed */
+    min-width: 450px; /* Minimum width to keep city boxes side-by-side */
+    justify-content: center; /* Center the column content */
+}
+
+.city-card {
+    display: flex; /* To put two city-boxes in a row */
+    gap: 20px; /* Space between the two city boxes */
+    flex-wrap: wrap; /* Allow boxes to wrap if screen is too small for two */
+    justify-content: center; /* Center city boxes within their row */
+}
+
+.city-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+    flex: 1; /* Allows city-box to grow/shrink within city-card */
+    min-width: 200px; /* Ensures minimum size for each city box */
+    max-width: 250px; /* Optional: control max width for consistency */
+}
+
+.city-box:hover {
+    transform: translateY(-5px);
+}
+
+.city-box img {
+    width: 60px; /* Adjust icon size */
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.city-box p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.city-box span {
+    font-size: 16px;
+    color: #007bff; /* Clove Dental blue color */
+    font-weight: 600;
+}
+
+.clinic-images {
+    display: flex; /* Arranges clinic-image columns side by side */
+    flex-direction: column; /* Stacks clinic-image rows vertically */
+    gap: 20px; /* Space between each row of clinic images */
+    flex: 1; /* Allows this section to take up less space, adjust as needed */
+    min-width: 300px; /* Minimum width to ensure images are visible */
+}
+
+.clinic-image {
+    display: flex; /* To put two clinic images in a row */
+    gap: 20px; /* Space between the two clinic images */
+    flex-wrap: wrap; /* Allow images to wrap if screen is too small for two */
+    justify-content: center; /* Center images within their row */
+}
+
+.clinic-image .img { /* Targeting images within clinic-image */
+    width: 100%; /* Make image fill its container */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 300px; /* Control individual image size */
+}
+
+
+/* Expert Guidance / Anniversary Section */
+.expert-guidance-section {
+    padding: 50px 0;
+    background-color: #fff; /* White background for this section */
+}
+
+.guidance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for the cards */
+    gap: 30px;
+}
+
+.expert-guidance-card,
+.dental-plan-card {
+    background-color: #f0f8ff; /* Light blue background for consistency */
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content */
+}
+
+.expert-guidance-card h3,
+.dental-plan-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.expert-guidance-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.consultation-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.consultation-form .disclaimer {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.btn-book-consultation {
+    background-color: #ff9900; /* Orange color from screenshot */
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-book-consultation:hover {
+    background-color: #e68a00;
+}
+
+/* Clove Anniversary Card Specifics */
+
+.anniversary-img {
+    width: auto;
+    height: 60%; /* Make image fill the card */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    border-radius: 8px; /* Apply border-radius to the image as well */
+}
+
+/* Dental Plan Card Specifics */
+.dental-plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.dental-plan-card ul li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px; /* Space for custom bullet */
+}
+
+.dental-plan-card ul li::before {
+    content: '\2022'; /* Bullet point */
+    color: #007bff; /* Blue color for bullet */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.dental-plan-card .special-offer-note {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.dental-plan-card .original-price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #007bff; /* Blue color */
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.dental-plan-card .slashed-price {
+    font-size: 24px;
+    color: #888;
+    text-decoration: line-through;
+    display: inline-block;
+}
+
+.btn-buy-now {
+    background-color: #ff9900; /* Orange color */
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-buy-now:hover {
+    background-color: #e68a00;
+}
+
+
+/* Frequently Asked Questions Section (Added for completeness) */
+.faq-section {
+    padding: 50px 0;
+    background-color: #f9f9f9; /* Light background */
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.faq-item:hover {
+    background-color: #f0f8ff;
+}
+
+.faq-item p {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.faq-toggle {
+    font-size: 24px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .city-grid {
+        flex-direction: column; /* Stack city-cards and clinic-images vertically */
+        align-items: center; /* Center them when stacked */
+    }
+    .city-cards {
+        flex: none; /* Reset flex property */
+        width: 100%; /* Take full width */
+        max-width: 550px; /* Optional: limit overall width for better readability */
+    }
+    .clinic-images {
+        flex: none; /* Reset flex property */
+        width: 100%; /* Take full width */
+        max-width: 600px; /* Optional: limit overall width */
+        margin-top: 20px; /* Space between stacked sections */
+    }
+    .guidance-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .city-card {
+        flex-direction: column; /* Stack city boxes vertically within their row */
+        align-items: center;
+    }
+    .city-box {
+        width: 90%; /* Make city box take more width when stacked */
+        max-width: 300px; /* Limit max width */
+    }
+    .clinic-image {
+        flex-direction: column; /* Stack clinic images vertically */
+        align-items: center;
+    }
+    .clinic-image .img {
+        width: 90%; /* Make images take more width when stacked */
+        max-width: 400px;
+    }
+    .guidance-grid {
+        grid-template-columns: 1fr; /* Single column on tablets */
+    }
+    .clove-anniversary-card,
+    .dental-plan-card {
+        margin-top: 30px; /* Add space between stacked cards */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Further adjustments for smaller mobile screens */
+    .find-us-across-india h2,
+    .faq-section h2 {
+        font-size: 30px;
+    }
+    .find-us-across-india p {
+        font-size: 16px;
+    }
+    .expert-guidance-card,
+    .clove-anniversary-card,
+    .dental-plan-card {
+        padding: 20px;
+    }
+    .expert-guidance-card h3,
+    .dental-plan-card h3 {
+        font-size: 22px;
+    }
+    .clove-anniversary-card h4 {
+        font-size: 28px;
+    }
+    .dental-plan-card .original-price {
+        font-size: 28px;
+    }
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 50px 0;
+    background-color: #f9f9f9; /* Light background */
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.faq-item:hover {
+    background-color: #f0f8ff;
+}
+
+.faq-item p {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.faq-toggle {
+    font-size: 24px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .city-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+    .guidance-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .city-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+    .clinic-images {
+        grid-template-columns: 1fr; /* Single column for images on smaller screens */
+    }
+    .guidance-grid {
+        grid-template-columns: 1fr; /* Single column on tablets */
+    }
+    .clove-anniversary-card,
+    .dental-plan-card {
+        margin-top: 30px; /* Add space between stacked cards */
+    }
+}
+
+@media (max-width: 576px) {
+    .city-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    .expert-guidance-card,
+    .clove-anniversary-card,
+    .dental-plan-card {
+        padding: 20px;
+    }
+    .expert-guidance-card h3,
+    .dental-plan-card h3 {
+        font-size: 22px;
+    }
+    .clove-anniversary-card h4 {
+        font-size: 28px;
+    }
+    .dental-plan-card .original-price {
+        font-size: 28px;
+    }
+}
+
+/* --- Footer Section (as per Screenshot (559).png) --- */
+.site-footer {
+    background-color: #333; /* Dark background color from screenshot */
+    color: #fff; /* White text color */
+    padding: 30px 0; /* Vertical padding */
+    font-size: 0.9em; /* Adjust font size */
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between; /* Pushes content to the left and right edges */
+    align-items: center; /* Vertically center items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px; /* Match your main content width */
+    margin: 0 auto;
+    padding: 0 20px; /* Horizontal padding */
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow logo and text to wrap if needed */
+    gap: 20px; /* Space between logo and copyright text initially */
+}
+
+.footer-logo img {
+    height: 40px; /* Adjust logo height as seen in screenshot */
+    vertical-align: middle;
+}
+
+.copyright-text {
+    margin: 0; /* Remove default paragraph margin */
+    line-height: 1.5;
+    color: #bbb; /* Slightly lighter text for copyright */
+}
+
+.footer-right {
+    /* No specific styles needed here other than default flex item behavior */
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Space between the links */
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #fff; /* White link color */
+    transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #ff6f00; /* Orange hover color, consistent with other elements */
+}
+
+/* --- Responsive Adjustments for Footer --- */
+@media (max-width: 768px) {
+    .site-footer .container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+        gap: 20px; /* Space between stacked blocks */
+    }
+
+    .footer-left {
+        flex-direction: column; /* Stack logo and copyright text */
+        gap: 10px;
+    }
+
+    .copyright-text {
+        order: 2; /* Ensure copyright text comes after logo if they stack */
+        max-width: 90%; /* Constrain text width */
+    }
+
+    .footer-logo {
+        order: 1; /* Ensure logo comes first */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Space between stacked links */
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 20px 0;
+    }
+    .footer-logo img {
+        height: 35px;
+    }
+    .copyright-text {
+        font-size: 0.8em;
+    }
+    .footer-links li a {
+        font-size: 0.85em;
+    }
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 992px) {
+    /* Header adjustments for tablet */
+    .main-header .container {
+        flex-direction: row; /* Keep logo/nav/contact on one line if possible */
+        justify-content: space-between;
+    }
+    .main-nav .nav-list {
+        display: none; /* Hide nav list by default on smaller screens */
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute; /* Position relative to header */
+        top: 80px; /* Adjust based on header height */
+        left: 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .main-nav .nav-list.active {
+        display: flex; /* Show when active */
+    }
+
+    .main-nav .nav-list li {
+        margin: 0;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+    }
+
+    .main-nav .nav-list a {
+        padding: 15px 20px;
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger icon */
+    }
+
+    .header-contact {
+        order: 3; /* Move contact to a new line if space is tight */
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    /* Hero section adjustments */
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content, .hero-image {
+        width: 100%;
+        max-width: 100%;
+    }
+    .hero-image {
+        text-align: center; /* Center image */
+        margin-top: 30px;
+    }
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+
+    .appointment-form-card {
+        position: static; /* Stack form on smaller screens */
+        transform: none;
+        width: 90%; /* Adjust width */
+        margin: 40px auto 0; /* Center form below hero content */
+    }
+
+    /* Milestones, Features, Reviews, Find Us sections */
+    .milestones-section .container,
+    .feature-grid,
+    .city-list,
+    .clinic-images {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust min-width for columns */
+    }
+
+    .review-cards-carousel {
+        justify-content: flex-start; /* Ensure cards start from left */
+    }
+
+    .cookie-consent-bar .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cookie-consent-bar p {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column; /* Stack logo, nav, contact vertically */
+        align-items: center;
+    }
+    .logo, .main-nav, .header-contact {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .hamburger-menu {
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    .milestone-item span {
+        font-size: 2.5em;
+    }
+    .features-section h2, .google-reviews-section h2, .find-us-section h2 {
+        font-size: 2.2em;
+    }
+
+    .review-card {
+        flex: 0 0 90%; /* Make cards take most of the width */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    .header-contact span {
+        display: none; /* Hide phone number on very small screens */
+    }
+    .header-contact .book-appointment-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .hero-content .book-appointment-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+    .appointment-form-card {
+        padding: 25px;
+    }
+
+    .milestone-item span {
+        font-size: 2em;
+    }
+
+    .features-section h2, .google-reviews-section h2, .find-us-section h2 {
+        font-size: 1.8em;
+    }
+
+    .city-item {
+        padding: 15px;
+    }
+
+    .cookie-buttons {
+        flex-direction: column; /* Stack cookie buttons */
+        width: 100%;
+    }
+    .cookie-buttons button {
+        width: 100%;
+    }
+}
